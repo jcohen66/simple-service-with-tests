@@ -16,6 +16,21 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
+    public EmployeeServiceImpl() {
+        employees.add(Employee.builder()
+                .id(1L)
+            .name("Tom")
+                .build()
+        );
+
+        employees.add(Employee.builder()
+                .id(2L)
+                .name("Bill")
+                .build()
+        );
+
+    }
+
     @Override
     public Employee getEmployeeByName(String name) {
         return employeeRepository.findByName(name);
